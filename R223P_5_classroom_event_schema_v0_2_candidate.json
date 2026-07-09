@@ -1,0 +1,181 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://shiwei.local/schemas/classroom_event_standard_v0_2_candidate_lock.json",
+  "stage_id": "1013R_R223P_5_V0_2_LOCK_CANDIDATE",
+  "standard_id": "R223M_CLASSROOM_EVENT_STANDARD_V0_2_CANDIDATE",
+  "status": "candidate_locked_not_published",
+  "schema_v0_2_published": false,
+  "formal_apply_allowed": false,
+  "source_standard": "R223M_P5_GOLDEN_CLASSROOM_EVENT_EXPANSION_STANDARD_V0_1_LOCK_CANDIDATE",
+  "source_delta": "R223P_3_CLASSROOM_EVENT_SCHEMA_V0_2_DELTA",
+  "source_regression": "R223P_4_THREE_SAMPLE_REGRESSION",
+  "core_event_fields_from_v0_1": [
+    "event_id",
+    "event_name",
+    "section",
+    "source_anchor",
+    "teaching_responsibility",
+    "student_problem",
+    "task_release",
+    "expected_student_responses",
+    "likely_misconceptions_or_failures",
+    "teacher_follow_up_questions",
+    "teacher_scaffolding_moves",
+    "teacher_rescue_strategy",
+    "screen_trigger",
+    "component_trigger",
+    "learning_sheet_trigger",
+    "evidence_trigger",
+    "assessment_alignment",
+    "transition_chain",
+    "teacher_visible_note",
+    "control_points"
+  ],
+  "general_pedagogy_core_candidate_fields": [
+    {
+      "field_id": "unit_phase_role",
+      "policy": "lesson_level_required_candidate_event_level_optional",
+      "teacher_default_visibility": "naturalized_only"
+    },
+    {
+      "field_id": "lesson_position_in_unit",
+      "policy": "lesson_level_recommended",
+      "teacher_default_visibility": "naturalized_only"
+    },
+    {
+      "field_id": "practice_intensity",
+      "policy": "lesson_level_required_candidate_event_level_optional",
+      "teacher_default_visibility": "hidden_by_default_controls_density"
+    },
+    {
+      "field_id": "student_work_time_ratio",
+      "policy": "lesson_level_optional",
+      "teacher_default_visibility": "hidden_by_default"
+    },
+    {
+      "field_id": "teacher_support_density",
+      "policy": "lesson_level_optional",
+      "teacher_default_visibility": "naturalized_as_guidance_density"
+    },
+    {
+      "field_id": "performance_task_link",
+      "policy": "conditional_recommended",
+      "teacher_default_visibility": "naturalized_in_unit_position_or_evaluation"
+    },
+    {
+      "field_id": "stage_evidence_link",
+      "policy": "recommended",
+      "teacher_default_visibility": "naturalized_in_evaluation"
+    },
+    {
+      "field_id": "process_evidence",
+      "policy": "conditional_required_for_practice_events",
+      "teacher_default_visibility": "naturalized_as_evidence_sentence"
+    },
+    {
+      "field_id": "checkpoint",
+      "policy": "conditional_required_for_practice_creation",
+      "teacher_default_visibility": "naturalized_as_teacher_observation_point"
+    },
+    {
+      "field_id": "branch_to",
+      "policy": "optional_review_ledger",
+      "teacher_default_visibility": "hidden_by_default"
+    },
+    {
+      "field_id": "exit_condition",
+      "policy": "recommended_for_event_transition",
+      "teacher_default_visibility": "naturalized_as_transition"
+    }
+  ],
+  "art_subject_adapter_candidate_fields": [
+    {
+      "field_id": "practice_pattern_type",
+      "policy": "core_candidate_primary_pattern_in_review_ledger",
+      "teacher_default_visibility": "forbidden_field_name"
+    },
+    {
+      "field_id": "demonstration_type",
+      "policy": "conditional_optional_when_teacher_demonstration",
+      "teacher_default_visibility": "forbidden_field_name"
+    },
+    {
+      "field_id": "micro_practice_type",
+      "policy": "conditional_optional_when_micro_practice",
+      "teacher_default_visibility": "forbidden_field_name"
+    },
+    {
+      "field_id": "appreciation_scaffold_type",
+      "policy": "conditional_optional_when_artwork_appreciation",
+      "teacher_default_visibility": "forbidden_field_name"
+    },
+    {
+      "field_id": "artwork_reference_type",
+      "policy": "optional_when_artwork_or_comparison_resource_exists",
+      "teacher_default_visibility": "naturalized_as_resource_description"
+    },
+    {
+      "field_id": "aesthetic_language_focus",
+      "policy": "recommended_for_visual_language_events",
+      "teacher_default_visibility": "naturalized_in_questions_and_evaluation"
+    },
+    {
+      "field_id": "technique_breakthrough_point",
+      "policy": "recommended_when_technique_or_demonstration_exists",
+      "teacher_default_visibility": "naturalized_as_demonstration_focus"
+    },
+    {
+      "field_id": "material_safety_or_management",
+      "policy": "conditional_required_when_material_tool_cleanup_risk_exists",
+      "teacher_default_visibility": "naturalized_as_classroom_reminder"
+    },
+    {
+      "field_id": "student_practice_output",
+      "policy": "conditional_required_when_micro_practice_exists",
+      "teacher_default_visibility": "naturalized_as_student_task_output"
+    },
+    {
+      "field_id": "transition_to_formal_creation",
+      "policy": "conditional_required_when_micro_practice_or_demonstration_precedes_creation",
+      "teacher_default_visibility": "naturalized_as_transition_sentence"
+    }
+  ],
+  "review_ledger_only_fields": [
+    "component_trigger_status",
+    "screen_trigger.details",
+    "learning_sheet_fields",
+    "evidence_trigger.details",
+    "unregistered_surface_candidates",
+    "validator_rule_id",
+    "source_status",
+    "activated_adapter_fields",
+    "primary_pattern",
+    "secondary_patterns"
+  ],
+  "validator_candidate_rules": [
+    "Events with demonstration_type must include micro_practice_type or transition_to_formal_creation.",
+    "Events with appreciation_scaffold_type must include observation_prompt and expected_student_responses.",
+    "Events with micro_practice_type must include student_practice_output and transition_to_formal_creation.",
+    "material_experiment events must include material_safety_or_management or material_test_conclusion.",
+    "practice_creation lessons must include checkpoint or process_evidence.",
+    "showcase_evaluation events must include evidence_outputs or student_art_statement.",
+    "Unregistered components or new surface candidates must not enter teacher default view.",
+    "Teacher default view must not show practice_pattern_type, demonstration_type, micro_practice_type, or appreciation_scaffold_type field names.",
+    "Each lesson-level event should declare unit_phase_role and practice_intensity."
+  ],
+  "boundary": {
+    "r223m_p5_v0_1_modified": false,
+    "existing_teacher_drafts_modified": false,
+    "r222d_component_library_modified": false,
+    "formal_ui": false,
+    "r97b_modified": false,
+    "frontend_backend_modified": false,
+    "runtime_connected": false,
+    "provider_model_connected": false,
+    "prompt_modified": false,
+    "database_written": false,
+    "formal_apply": false
+  },
+  "decision": "PASS_LOCK_R223M_STANDARD_V0_2_CANDIDATE"
+}
+
