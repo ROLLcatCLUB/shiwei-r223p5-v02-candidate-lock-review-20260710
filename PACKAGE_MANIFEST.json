@@ -1,0 +1,42 @@
+{
+  "stage_id": "1013R_R223P_5_V0_2_LOCK_CANDIDATE",
+  "status": "v0_2_candidate_locked_not_published",
+  "decision": "PASS_LOCK_R223M_STANDARD_V0_2_CANDIDATE",
+  "schema_v0_2_published": false,
+  "r223m_p5_v0_1_modified": false,
+  "existing_teacher_drafts_modified": false,
+  "r222d_component_library_modified": false,
+  "formal_ui": false,
+  "r97b_modified": false,
+  "frontend_backend_modified": false,
+  "runtime_connected": false,
+  "provider_model_connected": false,
+  "prompt_modified": false,
+  "database_written": false,
+  "formal_apply": false,
+  "source_stages": [
+    "R223M-P5",
+    "R223P-1",
+    "R223P-2",
+    "R223P-3",
+    "R223P-4"
+  ],
+  "files": [
+    "R223P_5_v0_2_candidate_lock_report.md",
+    "R223P_5_classroom_event_schema_v0_2_candidate.json",
+    "R223P_5_schema_delta_from_v0_1.md",
+    "R223P_5_field_required_optional_ledger_only_policy.md",
+    "R223P_5_general_core_vs_art_adapter_boundary.md",
+    "R223P_5_unit_lesson_practice_intensity_router_contract.md",
+    "R223P_5_teacher_default_view_guardrails.md",
+    "R223P_5_review_ledger_requirements.md",
+    "R223P_5_component_trigger_status_policy_lock.md",
+    "R223P_5_regression_summary_from_P4.md",
+    "R223P_5_next_stage_handoff.md",
+    "validate_1013R_R223P_5_v0_2_lock_candidate.py",
+    "validate_1013R_R223P_5_v0_2_lock_candidate_result.json",
+    "README_FOR_GPT_REVIEW.md",
+    "PACKAGE_MANIFEST.json"
+  ]
+}
+
